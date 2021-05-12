@@ -8,13 +8,14 @@ option objc_class_prefix = "HLW";
 package br.com.zup.edu;
 
 service ValidacpfService {
-  rpc send (ValidacpfRequest) returns (ValidacpfReply) {}
+  rpc valida (ValidacpfRequest) returns (ValidacpfResponse) {}
 }
 
 message ValidacpfRequest {
-  string name = 1;
+  string cpf = 1;
 }
 
-message ValidacpfReply {
-  string message = 1;
+message ValidacpfResponse {
+  string cpf = 1;
+  string mensagem = 2;
 }
