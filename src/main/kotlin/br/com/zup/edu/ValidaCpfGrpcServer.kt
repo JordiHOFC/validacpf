@@ -31,13 +31,13 @@ class ValidaCpfGrpcServer : ValidacpfServiceGrpc.ValidacpfServiceImplBase() {
                 }
             } else if (cpf!!.isBlank()) {
                 var statusProto = com.google.rpc.Status.newBuilder()
-                    .setCode(Code.INVALID_ARGUMENT_VALUE)
+                    .setCode(Code.INVALID_ARGUMENT.number)
                     .setMessage("Valor de cpf não pode ser nulo").addDetails(
                         Any.pack(
                             ErrorDetails
                                 .newBuilder()
                                 .setCode(400)
-                                .setMessage("BAD REQUEST").build()
+                                .setMessage("O CPF NAO DEVE SER EM BRANCO").build()
                         )
                     ).build()
 
