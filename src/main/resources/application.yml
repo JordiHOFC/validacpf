@@ -1,3 +1,17 @@
 micronaut:
   application:
     name: validacpf
+
+grpc:
+  server:
+    health:
+      enabled: true
+
+
+endpoints:
+  all:
+    sensitive: true
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
